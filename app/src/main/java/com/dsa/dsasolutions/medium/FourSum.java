@@ -26,49 +26,42 @@ public class FourSum {
         return ans;
     }
 
-    private static void nSum(int[] nums, int n, int target, int start, int end, List<Integer> path, List<List<Integer>> ans) {
-        if (end - start + 1 < n || target < nums[start] * n || target > nums[end] * n) {
+    private static void nSum(int[] nums, long n, long target, int l, int r, List<Integer> path,
+                      List<List<Integer>> ans) {
+        if (r - l + 1 < n || target < nums[l] * n || target > nums[r] * n)
             return;
-        }
-
         if (n == 2) {
-            twoSum(nums, target, start, end, path, ans);
+            // Similar to the sub procedure in 15. 3Sum
+            while (l < r) {
+                final int sum = nums[l] + nums[r];
+                if (sum == target) {
+                    path.add(nums[l]);
+                    path.add(nums[r]);
+                    ans.add(new ArrayList<>(path));
+                    path.remove(path.size() - 1);
+                    path.remove(path.size() - 1);
+                    ++l;
+                    --r;
+                    while (l < r && nums[l] == nums[l - 1])
+                        ++l;
+                    while (l < r && nums[r] == nums[r + 1])
+                        --r;
+                } else if (sum < target) {
+                    ++l;
+                } else {
+                    --r;
+                }
+            }
             return;
         }
 
-        for (int i = start; i <= end; ++i) {
-            if (i > start && nums[i] == nums[i - 1]) {
+        for (int i = l; i <= r; ++i) {
+            if (i > l && nums[i] == nums[i - 1])
                 continue;
-            }
-
             path.add(nums[i]);
-            nSum(nums, n - 1, target - nums[i], i + 1, end, path, ans);
+            nSum(nums, n - 1, target - nums[i], i + 1, r, path, ans);
             path.remove(path.size() - 1);
         }
     }
-
-    private static void twoSum(int[] nums, int target, int start, int end, List<Integer> path, List<List<Integer>> ans) {
-        while (start < end) {
-            int sum = nums[start] + nums[end];
-            if (sum == target) {
-                path.add(nums[start]);
-                path.add(nums[end]);
-                ans.add(new ArrayList<>(path));
-                path.remove(path.size() - 1);
-                path.remove(path.size() - 1);
-                ++start;
-                --end;
-                while (start < end && nums[start] == nums[start - 1]) {
-                    ++start;
-                }
-                while (start < end && nums[end] == nums[end + 1]) {
-                    --end;
-                }
-            } else if (sum < target) {
-                ++start;
-            } else {
-                --end;
-            }
-        }
-    }
+}
 }
