@@ -3,6 +3,7 @@ package com.dsa.dsasolutions.sorting.easy;
 import java.util.Arrays;
 
 public class SortArrayByParity {
+    //https://leetcode.com/problems/sort-array-by-parity/
     public static void main(String[] args) {
         int[] num = {3,1,2,4};
         System.out.println(Arrays.toString(sortArrayByParity(num)));
