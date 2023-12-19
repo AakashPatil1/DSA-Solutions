@@ -3,6 +3,7 @@ package com.dsa.dsasolutions.sorting.easy;
 import java.util.Arrays;
 
 public class SmallerNumbersThanCurrent {
+    //https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/description/
     public static void main(String[] args) {
         int[] num = {8,1,2,2,3};
         System.out.println(Arrays.toString(smallerNumbersThanCurrent(num)));

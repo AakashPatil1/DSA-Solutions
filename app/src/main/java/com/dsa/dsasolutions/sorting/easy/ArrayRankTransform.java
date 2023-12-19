@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ArrayRankTransform {
+    //https://leetcode.com/problems/rank-transform-of-an-array/description/
     public static void main(String[] args) {
         int[] num = {40,10,20,30};
         System.out.println(Arrays.toString(arrayRankTransform(num)));
