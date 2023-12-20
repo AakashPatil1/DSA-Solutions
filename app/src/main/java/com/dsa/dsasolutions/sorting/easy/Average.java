@@ -3,6 +3,7 @@ package com.dsa.dsasolutions.sorting.easy;
 import java.util.Arrays;
 
 public class Average {
+    //https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/description/
     public static void main(String[] args) {
         int[] num = {4000, 3000, 1000, 2000};
         System.out.println(average(num));
