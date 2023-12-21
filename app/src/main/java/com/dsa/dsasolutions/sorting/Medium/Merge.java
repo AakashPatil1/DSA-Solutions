@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Merge {
-
+//https://leetcode.com/problems/merge-intervals/description/
     public static void main(String[] args) {
         int[][] num = {{1,3},{2,6},{8,10},{15,18}};
         System.out.println(Arrays.toString(merge(num)));
