@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ThreeSum {
+    //https://leetcode.com/problems/3sum/description/
     public static void main(String[] args) {
         int[] num = {-1,0,1,2,-1,-4};
         System.out.println(threeSum(num));

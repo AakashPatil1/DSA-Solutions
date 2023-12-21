@@ -3,6 +3,7 @@ package com.dsa.dsasolutions.sorting.Medium;
 import java.util.Arrays;
 
 public class ThreeSumClosest {
+    //https://leetcode.com/problems/3sum-closest/description/
     public static void main(String[] args) {
         int[] num = {-1,2,1,-4};
         int target =1;
