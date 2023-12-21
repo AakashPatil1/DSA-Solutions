@@ -14,14 +14,14 @@ public class SortColors {
 
         for (final int num : nums)
             if (num == 0) {
-                nums[two++] = 2;
-                nums[one++] = 1;
-                nums[zero++] = 0;
+                nums[++two] = 2;
+                nums[++one] = 1;
+                nums[++zero] = 0;
             } else if (num == 1) {
-                nums[two++] = 2;
-                nums[one++] = 1;
+                nums[++two] = 2;
+                nums[++one] = 1;
             } else {
-                nums[two++] = 2;
+                nums[++two] = 2;
             }
     }
 }
